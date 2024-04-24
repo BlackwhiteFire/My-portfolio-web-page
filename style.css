@@ -2,116 +2,168 @@
     box-sizing: border-box;
     padding: 0;
 }
-body{
-    /* background-color:  #003459; */
-    background-color: rgb(19,19,20);
-    color: white;
-    /* background-image: url(images/bg-image-copy.png) */
-}
-
 a{
     color: inherit;
     text-decoration: none;
 }
 
-nav{
-    position: sticky;
-    top: 5px;
-    /* background-color: rgb(19,19,20);
-    animation-name: nav-animation;
-    animation-timeline: scroll(); */
-
+li{
+    list-style: none;
 }
 
+h1{
+    font-family: "Barlow", sans-serif;
+    color: white;
+}
 
-/* @keyframes nav-animation{
-    to{
-        height: 0.2em;
+body{
+    background-color: rgb(19,19,20);
+    color: white;
+    background-image: url(images/bg-image-copy.png)
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    align-items: center;
+    top: 5px;
+    margin-bottom: 17.9em;
+}
+
+#nav-bg{
+    height: 6.6em;
+    position:fixed;
+    top:0px;
+    background-color: rgb(19,19,20);
+    width: 100%;
+    z-index: -1;
+    animation-name: nav-bg-animation;
+    animation-timeline: scroll();
+}
+
+@keyframes nav-bg-animation {
+    0%{
+        background-color: transparent;
     }
-} */
+    100%{
+
+    }
+}
 
 .name-tag{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding-top: 0.2em;
     padding-bottom: 3em;
     font-family: "Barlow", sans-serif;
-    /* animation: nametag-animation 5s ease ; */
-    /* animation-timeline: scroll(); */
-    /* transition-duration: flex-directon;
-    transition-timing-function: ease-in-out;
-    transition-duration: 5s;
-    transition-delay: 12s; */
+    padding-left:0em ;
+}
+
+.my-picture{
+    border-radius: 10em;
+    border-width: 12px;
+    border-color: white;
+    width: 17%;
+    margin-right: 1em;
+    animation-name:mypicture-animation ;
+    animation-duration: 5s;
+    animation-timeline: scroll()
 
 }
 
-@keyframes nametag-animation {
-    to{
+@keyframes mypicture-animation{
+    0%{
+        /* border-color: white; */
 
-        padding: 0.1em;
+    }
+
+
+    100%{
+        /* margin-right: 0.5em;
+        transform: translate(-37em,-5em) scale(0.4);
+        padding: 1em 0em 1em 0em; */
     }
 
 }
 
 .my-name{
+    font-size: 1.2em;
+    color: lightblue;
     animation-name: name-animation;
     animation-duration: 5s;
     animation-timeline: scroll();
 }
 
-@keyframes name-animation {
+/* @keyframes name-animation {
     to{
-        transform: translate(-17em,-9.7em) scale(0.7);
+        transform: translate(-17em,-9.9em) scale(0.7);
         color: lightblue;
     }
 
-}
-
-
+} */
 
 .nav-buttons-list{
-    color: lightsalmon;
+    /* color: lightsalmon; */
+    width: 50%;
     display: flex;
     justify-content: space-around;
-    padding-bottom: 3em;
-    list-style: none;
-    font-size: larger;
-    animation-name:navbuttons-list-animation ;
-    animation-timeline: scroll()
+    align-items: center;
+    padding-bottom: 2.5em;
+    font-size: medium;
+    font-family: "Barlow", sans-serif;
+    animation-name: navbuttons-list-animation;
+    animation-timeline: scroll();
 
-    /* font-family: "Barlow", sans-serif; */
+
 }
 
 @keyframes navbuttons-list-animation {
     0%{
+        /* color: white;
+        transform: translate(-45%,+21.9em) scale(1.2); */
 
     }
-    75%{
 
-    }
     100%{
-        transform: translate(13em,-21.6em) scale(0.7);
-        padding: 4em 3em 2em 0em;
-        font-family: "Barlow", sans-serif;
-        font-size: 1.2em;
-        color: white;
+        /* padding: 4em 3em 2em 0em; */
 
     }
 }
+
 .nav-buttons:hover{
     position: relative;
     bottom:.5em;
 
 }
-h1{
-    display: inline;
+#main-heading{
+    /* margin-top: em; */
+    display:block;
     background-color: #003459 ;
+    margin-bottom: 0;
     padding: 1em;
+    padding-bottom: 0;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
-    font-family: "Barlow", sans-serif;
-    color: white;
+    width: 8em;
+    animation-name: mainheading-animation;
+    animation-timeline: scroll();
+}
+@keyframes mainheading-animation {
+    0%{
+
+    }
+    75%{
+        width: 30em;
+        margin: 0;
+    }
+    100%{
+        width: 100%;
+        margin: 0;
+        /* transform: translate(0,-2em); */
+    }
+
 }
 
 .portfolio-lists{
@@ -125,32 +177,8 @@ h1{
     font-family: "Barlow", sans-serif;
 
 }
-.my-picture{
-    /* position: relative;
-    left:50%; */
-    border-radius: 10em;
-    border-width: 12px;
-    border-color: white;
-    animation-name:mypicture-animation ;
-    animation-duration: 5s;
-    animation-timeline: scroll()
-}
 
 
-@keyframes mypicture-animation{
-    0%{
-        border-color: white;
-
-    }
-
-
-    100%{
-        margin-right: 2em;
-        transform: translate(-37em,-5em) scale(0.4);
-        padding: 1em 0em 1em 0em;
-    }
-
-}
 
 .part{
     display: flex;
@@ -160,15 +188,15 @@ h1{
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0.3em 0.3em 0.1em;
 }
 
-.port-list-item{
+.part-list-item{
     color: white;
     padding: 1em 3em;
     margin: 0.5em 2em;
     background-color: gray;
     border-radius: 0.6em;
-    list-style: none;
     background-color: rgb(255, 136, 90);
 
 }
