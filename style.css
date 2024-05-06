@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     padding: 0;
+    scrollbar-width: none;
 }
 a{
     color: inherit;
@@ -20,7 +21,10 @@ h1{
 body{
     background-color: rgb(19,19,20);
     color: white;
-    background-image: url(images/bg-image-copy.png)
+    background-image: url(images/bg-image-copy.png);
+}
+*::-webkit-scrollbar{
+    display: none;
 }
 
 nav{
@@ -235,6 +239,7 @@ nav{
     flex-direction: column;
     width: 30%;
     height: 33rem;
+    margin-left: 10rem;
     justify-content: space-around;
     align-items: space-between;
     border:none;
@@ -277,11 +282,30 @@ textarea{
 
 }
 
-#comment-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 10em;
+#posted-comments-div{
+    max-height: 30rem;
+    overflow-y: scroll;
+}
+
+.comment-div{
+    position: relative;
+    z-index: -1;
+    height: 13rem;
+    width: 20rem;
+    margin: 2rem 0rem 1rem 1rem;
+    background-color: white;
+    border-radius: 1em;
+    padding: 0.6rem 2rem;
+    color: black;
+}
+
+.commenters-image{
+
+    width:50px;
+    border-radius: 5em;
+    position: relative;
+    right: 1.25rem;
+
 }
 
 #comment-box-input{
