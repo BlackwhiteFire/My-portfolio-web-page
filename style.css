@@ -37,9 +37,6 @@ nav{
     margin: 0px;
 }
 
-.nav-index{
-    margin-bottom: 17.9em;
-}
 #nav-bg{
     height: 6.6em;
     position:fixed;
@@ -49,10 +46,6 @@ nav{
     opacity: 80%;
     z-index: -1;
 
-}
-.nav-bg-index{
-    animation-name: nav-bg-animation;
-    animation-timeline: scroll();
 }
 
 @keyframes nav-bg-animation {
@@ -83,11 +76,6 @@ nav{
 
 }
 
-.my-picture-index{
-    animation-name:mypicture-animation ;
-    animation-timeline: scroll()
-}
-
 @keyframes mypicture-animation{
     0%{
         transform: translate(38rem,5rem) scale(3);
@@ -100,6 +88,43 @@ nav{
     font-size: 1.2em;
     color: lightblue;
 }
+
+.nav-buttons-list{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 2.5em;
+    font-size: medium;
+    font-family: "Barlow", sans-serif;
+}
+
+.nav-index{
+    margin-bottom: 19rem;
+}
+
+
+.nav-bg-index{
+    animation-name: nav-bg-animation;
+    animation-timeline: scroll();
+}
+
+.my-picture-index{
+    animation-name:mypicture-animation ;
+    animation-timeline: scroll()
+}
+
+.nav-buttons{
+    transition-duration: 0.1s;
+    transition-timing-function: ease;
+}
+
+.nav-buttons:hover{
+    transform:translateY(-0.5em);
+}
+
+/*--------------------------------------------------------index--------------------------------------------------------*/
+
 
 .my-name-index{
     animation-name: name-animation;
@@ -114,26 +139,13 @@ nav{
 
 }
 
-.nav-buttons-list{
-    /* color: lightsalmon; */
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: 2.5em;
-    font-size: medium;
-    font-family: "Barlow", sans-serif;
-}
-
 .nav-buttons-list-index{
     animation-name: navbuttons-list-animation;
     animation-timeline: scroll();
 }
 
-
 @keyframes navbuttons-list-animation {
     0%{
-        color:rgb(250, 197, 176);
         transform: translate(-14rem,19rem) scale(1.6);
         width: 70%;
         font-size: small;
@@ -149,19 +161,11 @@ nav{
     }
 }
 
-.nav-buttons{
-    transition-duration: 0.1s;
-    transition-timing-function: ease;
-}
-
-.nav-buttons:hover{
-    transform:translateY(-0.5em);
-}
-
 #main-heading{
+    /* former color #003459 */
     /* margin-top: em; */
     display:block;
-    background-color: #003459 ;
+    background-color: #104469 ;
     margin-bottom: 0;
     padding: 1em;
     padding-bottom: 0;
@@ -188,55 +192,50 @@ nav{
 }
 
 .portfolio-lists{
-    color: black;
     background-color:  #104469;
     display: flex;
     justify-content: space-around;
-    padding: 5em;
+    padding: 4.8em 5em;
     /* padding-bottom: 10em; */
     align-items: baseline;
     font-family: "Barlow", sans-serif;
 
 }
 
-
-
 .part{
     position: relative;
     display: flex;
-    background-color:white ;
+    background-color: black ;
     /* padding: 5em; */
     border-radius: 2em;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     /* box-shadow: 0.3em 0.3em 0.1em; */
     max-height: 21.5rem;
-    /* overflow: hidden; */
-    /* animation-name: part-animation;
-    animation-duration: 7s; */
-}
-@keyframes part-animation {
-    0%{
-        padding-top: 35em;
-        max-height: 21.5rem;
-    }
+    overflow:scroll;
+    min-height: 21.5rem;
 }
 
 .part-list-item{
-    /* color: white; */
+    display: flex;
     color: rgb(255, 136, 90);
+    background-color: black;
     border: solid;
-    padding: 0.9em 3em;
+    /* padding: 0.9em 0em; */
+    align-items: center;
     margin: 0.5em 2em;
-    /* margin-bottom: 10em; */
     border-radius: 0.6em;
+    width: 16rem;
+    justify-content: center;
+    height: 3.3em;
     border-width: 3px;
     border-color: rgb(255, 136, 90);
+    text-align: center;
     /* background-color: rgb(255, 136, 90); */
     animation-name: part-list-item-animation;
     animation-duration: 3s;
-    animation-timeline: scroll();
+    animation-timeline: scroll(root);
 
 }
 
@@ -250,18 +249,11 @@ nav{
     }
 }
 
-
-/* comment page */
+/*-------------------------------------------------- comment page --------------------------------------------------*/
 
 #comment-content{
     display: flex;
 }
-
-
-/* #form-div{
-    display: flex;
-    justify-content: center;
-} */
 
 #comment-form{
     display: flex;
@@ -324,10 +316,10 @@ textarea{
     height: 13rem;
     width: 20rem;
     margin: 2rem 0rem 1rem 1rem;
-    background-color: white;
+    background-color: #104469;
     border-radius: 1em;
     padding: 0.6rem 2rem;
-    color: black;
+    color: white;
     animation-name: comment-div-animation;
     animation-duration: 1.5s;
     animation-timing-function: ease;
@@ -386,49 +378,73 @@ button:active{
     background-color:lightsalmon;
 }
 
+/* -----------------------------------------------Resources -----------------------------------------------*/
 
 #resource-ul{
     padding: 0rem 5rem;
     margin: 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* justify-content: left;
-    flex-direction: column; */
+    z-index: -1;
 }
-/* Resources */
+
 .resource-links{
+    display: block;
+    color: black;
+    font-size: 5em;
+    align-items: center;
+    width: 40rem;
+    overflow: hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.resource-links:hover{
+    transform: scale(1.1);
+}
+
+.make-it-fit{
     display: flex;
     align-items: center;
     transform: scale(0.5);
     transform-origin: left;
-    background-color: white;
+    background-color:white;
     width: 55rem;
-    /* padding: 0.3rem; */
     height: 10rem;
     margin: 0px;
     border-radius: 1rem;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #003459;
+}
 
-}
-.just-to-make-it-fit{
-    color: black;
-    font-size: 5em;
-    z-index: -1;
-    align-items: center;
-    width: 30rem;
-    overflow: hidden;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
+
 .resource-links-image{
     list-style: none;
     display: flex;
-    /* height: 20%;
-    width: 20%; */
     text-align: left;
     margin-left: 0.5rem;
     padding-right: 0.3em;
+}
 
+/*----------------------------------------------------------Images------------------------------------------------*/
+
+#image-content{
+    align-self: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    height: 35rem;
+    margin: auto;
+
+}
+.image-images{
+    margin: auto;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+.image-images:hover{
+    transform: scale(1.2);
 }
